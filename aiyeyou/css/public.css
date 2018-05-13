@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{margin:0;padding:0;}
+li{list-style:none;}
+a{text-decoration:none;}
+
+/*图片居中*/
+.valign{text-align:center;}
+.valign img{vertical-align:middle;}
+.valign:after{content:"";display:inline-block;vertical-align:middle;height:100%;}
+
+/*文本溢出隐藏出现省略号*/
+.over{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
+/*定位居中*/
+.center{left:0;top:0;right:0;bottom:0;margin:auto;}
+
+/*万能清除法*/
+.clear{zoom:1;/*解决ie的神奇属性*/}
+.clear:before{content:"";display:table;}/*解决第一个子元素margin-top向上传递*/
+.clear:after{content:"";clear:both;display:block;}/*清除浮动*/
