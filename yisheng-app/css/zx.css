@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+html{font-size:9.2592vw;}
+header{height:1.32rem;background:#098fe4;position:fixed;left:0;top:0;width:100%;}
+header p{text-align:center;font:.58rem/1.32rem "";color:#fff;width:2.5rem;margin:0 auto;}
+header a{font:.76rem/1.32rem "";color:#fff;position:absolute;left:.25rem;}
+main{margin-top:1.32rem;overflow:hidden;padding:.47rem .37rem 0;}
+main p{width:10rem;height:1.05rem;text-indent:.55rem; border:.02rem solid #dddddd; border-radius:.05rem;margin-top:.31rem;}
+main p span{font:.36rem/1.05rem "";color:#9b9b9b;}
+main p input{height:1.05rem; border:0;font:.36rem/1.05rem "";color:#c7c7c7;}
+main .sle{width:100%;height:1.68rem;display:flex; justify-content:space-between;align-items:center;}
+main .sle span{font:.34rem/.34rem "";color:#9c9c9c;}
+main .sle select{width:3.82rem; height:.8rem;}
+main .sle select{font:.34rem/.8 "";color:#9c9c9c; text-align:center;}
+main .wen span{font:.34rem/.34rem "";color:#9c9c9c; vertical-align:top;}
+main .wen textarea{width:8.08rem;height:2.88rem;}
+main .file{margin-top:.35rem;margin-bottom:1.2rem;}
+main .file span{font:.34rem/.34rem "";color:#9c9c9c; vertical-align:top;}
+main .file input{display:none;}
+main .file label{display:inline-block;width:1.58rem;height:1.58rem; background:url(../images/t5.jpg) no-repeat center;background-size:1.58rem 1.58rem;border:.02rem solid #dddddd; border-radius:.05rem;}
+main .sub{width:100%; height:1.1rem;background:#098fe4; font:.34rem/1.1rem ""; color:#fff;margin-bottom:2.39rem;}

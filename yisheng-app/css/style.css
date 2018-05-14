@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+
+html{font-size:9.2592vw;}
+header{height:1.32rem;background:#098fe4;position:fixed;left:0;top:0;width:100%;}
+header p{text-align:center;font:.58rem/1.32rem "";color:#fff;}
+
+section{height:6.73rem; background:url(../images/banner.jpg) no-repeat; background-size:10.8rem 6.73rem;position:fixed;left:0;top:1.32rem;width:100%;}
+
+main{padding:0 .25rem;width:100%; box-sizing:border-box;margin-top:8.05rem;background:#efefef;}
+main ul{display:flex; justify-content:space-between; flex-wrap:wrap;}
+main ul li{width:5.05rem;height:4.95rem;background:#fff;margin-top:.25rem}
+main ul li a{display:block;}
+main ul li a i{display:block;background:url(../images/t1.jpg) no-repeat center; background-size:2.5rem 2.5rem;width:2.5rem;height:2.5rem;margin:0 auto;margin-top:.73rem;}
+main ul li a i.i2{background:url(../images/t2.jpg) no-repeat center;background-size:2.5rem 2.5rem;}
+main ul li a i.i3{background:url(../images/t3.jpg) no-repeat center;background-size:2.5rem 2.5rem;}
+main ul li a i.i4{background:url(../images/t4.jpg) no-repeat center;background-size:2.5rem 2.5rem;}
+main ul li a i.i2{background:url(../images/t1.jpg) no-repeat center;background-size:2.5rem 2.5rem;}
+main ul li a span{display:block; font:.44rem/1.48rem "";color:#333333;text-align:center;}
+
+
+
+
+
