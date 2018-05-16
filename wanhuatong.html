@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>写轮眼</title>
+<style>
+*{margin:0; padding:0;}
+.yan{width:800px; height:400px; border-radius:500px 50px 50px 20px; box-shadow:0 0 5px #000;margin:100px auto;background:#fff;transition:2s; position:relative;animation:dh5 2s infinite linear;}
+body .zhu2 *{position:absolute;}
+.zhu2{background:#000;width:100px;height:100px;border-radius:50%; left:10px;top:0; position:relative; transition:2s linear;top:120px;;margin:auto; animation:dh1 2s infinite linear; }
+/*写轮眼*/
+.yan:hover .zhu2{ transform:rotate(1080deg) scale(2,2); background:#f00;}
+.yan:hover .zhu2 .l1{background:rgba(255,0,0,1);}
+.yan:hover .zhu2 .g2{background:rgba(255,0,0,1);}
+.yan:hover .zhu2 .zj{background:#000;}
+.yan:hover{background:#000;}
+/*万花筒*/
+.yan:active .zhu2{ transform:rotate(-360deg) scale(3,3);}
+.yan:active .gy1{transform:scale(2,2) rotate(88deg); left:18px; top:44px;}
+.yan:active .gy2{transform:scale(2,2) rotate(-119deg); left:42px;top:17px;}
+.yan:active .gy3{transform:scale(2,2); left:46px;top:51px;}
+.yan:active .zhu2 .zj{background:#fff; transform:scale(1.5,1.5);}
+
+/*勾玉组成*/
+.ll{ width:15px;height:30px;border-radius:15px 0 0 15px;background:rgba(255,0,0,0);transition:2s;animation:dh2 2s infinite linear;}
+.rr{ width:15px;height:30px;border-radius:0 15px 15px 0; background:#000;left:15px;}
+.g1{width:7.5px;height:15px;border-radius:7.5px 0 0 7.5px;background:#000;left:7.5px;}
+.g2{width:7.5px;height:15px;border-radius:0 7.5px 7.5px 0;background:rgba(255,0,0,0);left:15px;top:15px;transition:2s;animation:dh3 2s infinite linear;}
+/*中间*/
+.zj{width:10px;height:10px; border-radius:50%;background:#fff; left:44.7px;top:46.8px;transition:2s;animation:dh4 2s infinite linear;}
+/*三勾玉*/
+.gy1{width:30px;height:30px;transform:rotate(91deg);top:47.5px;left:4.6px;transition:2s}
+.gy2{ width:30px;height:30px;left:37.7px; transform:rotate(217deg);top:2.8px;transition:2s}
+.gy3{left:63.3px;width:30px;height:30px;transform:rotate(-20deg);top:52.7px;transition:2s}
+/*血*/
+.xue p{width:2px;height:100px; position:absolute; left:300px;background:rgba(155,0,0,0);transition:2s 5s;}
+.xue p:nth-child(1){top:400px;left:747px;}
+.xue p:nth-child(2){top:370px;left:740px;}
+.xue p:nth-child(3){top:386px;left:738px;}
+.xue p:nth-child(4){top:390px;left:735px;}
+.xue p:nth-child(5){top:374px;left:730px;}
+.xue p:nth-child(6){top:384px;left:728px;}
+.yan:active .xue p{background:rgba(155,0,0,1)}
+/*动画*/
+/*@keyframes dh1{
+	0%{background:#000;transform:rotate(1080deg) scale(2,2);}
+	100%{background:#f00; transform:rotate(-360deg) scale(3,3);}
+	}
+@keyframes dh2{
+	0%{background:rgba(255,0,0,0);}
+	100%{background:rgba(255,0,0,1);}
+	}
+@keyframes dh3{
+	0%{background:rgba(255,0,0,0);}
+	100%{background:rgba(255,0,0,1);}
+	}
+@keyframes dh4{
+	0%{background:#fff;}
+	100%{background:#000;}
+	}
+@keyframes dh5{
+	0%{background:#fff;}
+	100%{background:#000;}
+	}*/
+
+
+
+
+
+
+
+
+</style>
+</head>
+
+<body>
+<div class="yan">
+<div class="zhu2">
+<div class="gy1">
+    <div class="ll">
+    </div>
+    <div class="rr">
+    </div>
+    <div class="g1">
+    </div>
+    <div class="g2">
+	</div>
+</div>
+<div class="gy2">
+    <div class="ll">
+    </div>
+    <div class="rr">
+    </div>
+    <div class="g1">
+    </div>
+    <div class="g2">
+    </div>
+</div>
+<div class="gy3">
+    <div class="ll">
+    </div>
+    <div class="rr">
+    </div>
+    <div class="g1">
+    </div>
+    <div class="g2">
+    </div>
+</div>
+    <div class="zj">
+    </div>
+</div>
+<!--xue-->
+<div class="xue">
+	<p></p>
+    <p></p>
+    <p></p><p></p>
+    <p></p>
+    <p></p>
+
+</div>
+</div>
+
+
+</body>
+</html>
