@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>轮播图</title>
+<style>
+*{padding:0;margin:0;}
+li{ list-style:none;}
+.box{width:600px; height:200px; box-shadow:0 0 5px #000;margin:100px auto; overflow:hidden;}
+.box ul{ width:1000%;margin-left:0;animation:gd 8s linear infinite;}
+.box ul li{float:left;}
+.box ul li img{ width:300px; height:200px; display:block;}
+
+@keyframes gd{
+	0%{margin-left:0;}
+	100%{ margin-left:-1500px;}
+	}
+.box:hover ul{ animation-play-state:paused;}
+
+</style>
+</head>
+
+<body>
+<div class="box">
+	<ul>
+    	<li><img src="a.jpg" /></li>
+        <li><img src="f.jpg" /></li>
+        <li><img src="c.jpg" /></li>
+        <li><img src="d.jpg" /></li>
+        <li><img src="e.jpg" /></li>
+        <li><img src="a.jpg" /></li>
+        <li><img src="f.jpg" /></li>
+	</ul>
+</div>
+</body>
+</html>
