@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>机器猫</title>
+<style>
+*{margin:0;}
+body *{position:absolute;}
+.b{border:2px solid rgba(0,0,0,1);}
+.c{left:0;right:0;margin:0 auto;}
+#tou{width:310px;height:290px;border-radius:46%;background:#0bb2dc;top:20px}
+.lian{width:264px;height:210px;background:#fff;border-radius:50%;bottom:6px; z-index:999;}
+.yan-l{width:72px;height:84px;background:#fff;border-radius:42%;right:50%;top:-24px;margin-right:-1px;transition:2s;}
+.yan-l .zhu{width:15px;height:15px;border-radius:50%;background:rgba(0,0,0,1);bottom:15px;right:11px;}
+.yan-r{width:72px;height:84px;background:#fff;border-radius:42%;left:50%;top:-24px;margin-left:-1px;transition:2s;}
+.yan-r .zhu{width:15px;height:15px;border-radius:50%;background:rgba(0,0,0,1);bottom:15px;left:11px;transition:1s;}
+/*.yan-r:hover .zhu{left:44px;}*/
+.zhu2{}
+.yan-l:hover {background:#f00}
+.yan-r:hover {background:#f00}
+.yan-r:hover .zhu2{ transform:rotate(720deg) scale(.6,.6);background:rgba(255,0,0,1)}}
+.yan-r:hover .zhu2 .l1{background:rgba(255,0,0,1)}
+.yan-r:hover .zhu2 .rr{background:rgba(0,0,0,1)}
+.yan-r:hover .zhu2 .g1{background:rgba(0,0,0,1)}
+.yan-r:hover .zhu2  .g2{background:rgba(255,0,0,1)}
+.yan-r:hover .zhu2 .zj{background:rgba(0,0,0,1)}
+
+.yan-l:hover .zhu2{ transform:rotate(720deg) scale(.6,.6);background:rgba(255,0,0,1); left:-10px;}
+.yan-l:hover .zhu2 .l1{background:rgba(255,0,0,1)}
+.yan-l:hover .zhu2 .rr{background:rgba(0,0,0,1)}
+.yan-l:hover .zhu2 .g1{background:rgba(0,0,0,1)}
+.yan-l:hover .zhu2  .g2{background:rgba(255,0,0,1)}
+.yan-l:hover .zhu2 .zj{background:rgba(0,0,0,1)}
+
+.zhu2{background:rgba(255,0,0,0);width:100px;height:100px;border-radius:50%; left:0;top:0;transition:2s; transform:rotate(0deg) scale(.6,.6); left:-10px;}
+.yan-r .zhu2{ left:-20px;}
+/*勾玉组成*/
+.ll{ width:15px;height:30px;border-radius:15px 0 0 15px;background:rgba(255,0,0,0);;transition:2s;}
+.rr{ width:15px;height:30px;border-radius:0 15px 15px 0; background:rgba(0,0,0,0);left:15px;;transition:2s;}
+.g1{width:7.5px;height:15px;border-radius:7.5px 0 0 7.5px;background:rgba(0,0,0,0);left:7.5px;;transition:2s;}
+.g2{width:7.5px;height:15px;border-radius:0 7.5px 7.5px 0;background:rgba(255,0,0,0);left:15px;top:15px;;transition:2s;}
+/*中间*/
+.zj{width:10px;height:10px; border-radius:50%;background:rgba(0,0,0,0); left:44.7px;top:46.8px;}
+/*三勾玉*/
+.gy1{width:30px;height:30px;transform:rotate(91deg);top:47.5px;left:4.6px;}
+.gy2{ width:30px;height:30px;left:37.7px; transform:rotate(217deg);top:2.8px;}
+.gy3{left:63.3px;width:30px;height:30px;transform:rotate(-20deg);top:52.7px;}
+
+.bi{width:32px;height:32px;border-radius:50%;top:50px;background:radial-gradient(circle at 22px 13px,#fff 5%,#c93d02 34%,#c93d02);}
+.renzhong{width:2px;height:84px;background:rgba(0,0,0,1);top:84px;}
+.zui{width:172px;height:80px;border:2px solid transparent;border-bottom:2px solid rgba(0,0,0,1);border-radius:50%;top:86px;}
+
+
+
+#tou p{width:60px;height:2px;background:rgba(0,0,0,1);}
+#tou p:nth-of-type(1){top:100px;left:70%;transform-origin:left;transform:rotate(-16deg);}
+#tou p:nth-of-type(2){top:110px;left:70%;}
+#tou p:nth-of-type(3){top:120px;left:70%;transform-origin:left;transform:rotate(16deg);}
+#tou p:nth-of-type(4){top:100px;right:70%;transform-origin:right;transform:rotate(16deg);}
+#tou p:nth-of-type(5){top:110px;right:70%;}
+#tou p:nth-of-type(6){top:120px;right:70%;transform-origin:right;transform:rotate(-16deg);}
+#tou:hover .
+.zhong *{position:absolute;}
+.zhong{position:relative;margin:0 auto;width:500px;height:800px; left:141px;top:289px;}
+.zhong .bz{ width:232px;height:20px;background:#850901; border-radius:5px; border:2px solid #000; z-index:999}
+.zhong .bz .ld{ width:40px; height:40px; border-radius:50%; background:#e4dc17;left:90px;top:7px;border:1px solid #000; z-index:999;}
+.zhong .bz .ld p{width:36px; height:2px;border:2px solid #343235;top:10px;}
+.zhong .bz .ld .sy{width:10px; height:10px; background:#000; border-radius:50%;left:14px;top:20px;}
+.zhong .bz .ld  span{display:block;width:3px;height:10px;background:#000;left:18px;top:30px;}
+.zhong .qg{width:222px;height:157px; background:#0daed8;top:20px; left:5px;z-index:888; }
+.zhong .qg .dz{ width:170px;height:170px; border-radius:50%; border:2px solid #000;top:-52px;left:21px;background:#fff; z-index:-999;}
+.zhong .qg .dz .dai{width:122px;height:66px;border-radius:0 0 66px 66px; background:#fff;left:23px; top:84px;}
+.zhong .qg .dz .dai img{width:100%; height:100%; transform-origin:0 0; transition:1.6s; opacity:0; border-radius:3px; }
+
+.zhong .qg .dz .dai:hover img{ transform:translate(186px,-98px) rotate(-30deg); z-index:9999;opacity:1}
+
+.zhong .qg .xy{width:20px; height:10px; background:#fff;border:2px solid #000; left:100px;top:145px; border-radius:10px 10px 0 0;border-bottom:2px solid #fff;}
+.zhong .foot-l{ z-index:999;width:126px; height:30px; border:2px solid #000; border-radius:30px 10px 10px 5px;left:-14px;top:178px; transition:2s;}
+.zhong .foot-r{z-index:999;width:126px; height:30px; border:2px solid #000; border-radius:10px 30px 5px 10px;left:122px;top:178px;}
+.zhong .shou-l{width:92px;height:48px;border:2px solid #000;left:207px; top:40px; transform:rotate(30deg);background:#0daed8; transition:2s;}
+.zhong .shou-r{width:92px;height:48px;border:2px solid #000;left:-67px; top:40px; transform:rotate(-30deg);background:#0daed8}
+.zhong .zhang{width:60px; height:60px;border:2px solid #000; border-radius:50%;background:#fff;}
+.zhong .shou-l .zhang{ left:58px;top:-9px;}
+.zhong .shou-r .zhang{ left:-24px;top:-9px;}
+
+.zhong:hover .shou-l{transform:rotate(-30deg);top:10px;} 
+</style>
+</head>
+
+<body>
+<div id="tou" class="b c">
+	<div class="lian b c">
+    	<div class="yan-l b"><div class="zhu"></div><div class="zhu2">
+<div class="gy1">
+    <div class="ll">
+    </div>
+    <div class="rr">
+    </div>
+    <div class="g1">
+    </div>
+    <div class="g2">
+	</div>
+</div>
+<div class="gy2">
+    <div class="ll">
+    </div>
+    <div class="rr">
+    </div>
+    <div class="g1">
+    </div>
+    <div class="g2">
+    </div>
+</div>
+<div class="gy3">
+    <div class="ll">
+    </div>
+    <div class="rr">
+    </div>
+    <div class="g1">
+    </div>
+    <div class="g2">
+    </div>
+</div>
+    <div class="zj">
+    </div>
+</div></div>
+        <div class="yan-r b"><div class="zhu"></div><div class="zhu2">
+<div class="gy1">
+    <div class="ll">
+    </div>
+    <div class="rr">
+    </div>
+    <div class="g1">
+    </div>
+    <div class="g2">
+	</div>
+</div>
+<div class="gy2">
+    <div class="ll">
+    </div>
+    <div class="rr">
+    </div>
+    <div class="g1">
+    </div>
+    <div class="g2">
+    </div>
+</div>
+<div class="gy3">
+    <div class="ll">
+    </div>
+    <div class="rr">
+    </div>
+    <div class="g1">
+    </div>
+    <div class="g2">
+    </div>
+</div>
+    <div class="zj">
+    </div>
+</div></div>
+        <div class="bi b c"></div>
+        <div class="renzhong c"></div>
+        <div class="zui c"></div>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        
+    </div>
+</div>
+<div class="zhong c">
+	
+	<div class="bz">
+    	<div class="ld">
+        	<p></p>
+            <div class="sy">
+            </div>
+            <span>
+            </span>
+        </div>
+    </div>
+	<div class="qg b">
+    	<div class="dz">
+        	<div class="dai b">
+            	<img src="images/xyjy.jpg" />
+            </div>
+    	</div>
+        <div class="xy">
+        </div>
+    </div>
+	
+    <div class="foot-l">
+	</div>
+	<div class="foot-r">
+	</div>
+
+	<div class="shou-l">
+    	<div class="zhang">
+        </div>
+	</div>
+	<div class="shou-r">
+    	<div class="zhang">
+        </div>
+	</div>
+
+
+</div>
+
+
+</body>
+</html>
