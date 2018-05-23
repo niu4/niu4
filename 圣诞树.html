@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+				<style>
+		body{font:16px/16px "Times New Roman";}
+		html{padding-left:10%;}
+		</style>
+	</head>
+	<body>
+	</body>
+<!--//思路：圣诞树，有一个固定的高度h;每层三角形都是h;每层*宽度为2h 4h 6h 8h 等；空白倒三角与两个*三角一样宽，空白区域依次为：3,2,1,0等；-->
+		<!--控制宽度，只需要让内循环在打印时多打印一个就好；注意两个空格==一个字符；-->
+	<script>
+		//定义h,以及三个三角形的变量：y, e , s;
+		var h = parseInt(prompt("输入数值："));
+		var y = 1;
+		var e = 1;
+		var s = 1;
+		var f = 1;
+		var q = 1;
+		//第一个三角形，及左边空白部分；
+		for(;y<=h;y++){
+			//打印左侧空白矩形
+			for(var k = 1;k<=h;k++){
+				document.write("&nbsp;&nbsp;");document.write("&nbsp;&nbsp;");document.write("&nbsp;&nbsp;");
+			}
+			//打印空白倒三角；
+			for(var k=h;k>=y;k--){
+				document.write("&nbsp;&nbsp;");
+			}
+			//打印左侧三角；
+			for(var k = 1;k<=y;k++){
+				document.write("*");
+			}
+			//打印右侧三角；
+			for(var k = 1;k<=y;k++){
+				document.write("*");
+			}
+			
+			document.write("<br />")
+			
+		}
+		//第二个三角形，及左边空白部分；
+		for(;e<=h;e++){
+			//打印左侧空白矩形
+			for(var k = 1;k<=2*h;k++){
+				document.write("&nbsp;&nbsp;");
+			}
+			//打印空白倒三角；
+			for(var k=h;k>=e;k--){
+				document.write("&nbsp;&nbsp;");document.write("&nbsp;&nbsp;");
+			}
+			//打印左侧三角；
+			for(var k = 1;k<=e;k++){
+				document.write("*");document.write("*");
+			}
+			//打印右侧三角；
+			for(var k = 1;k<=e;k++){
+				document.write("*");document.write("*");
+			}
+			
+			document.write("<br />")
+			
+		}		
+		
+		//第三个三角形，及左边空白部分；
+		for(;s<=h;s++){
+			//打印左侧空白矩形
+			for(var k = 1;k<=h;k++){
+				document.write("&nbsp;&nbsp;");
+			}
+			//打印空白倒三角；
+			for(var k=h;k>=s;k--){
+				document.write("&nbsp;&nbsp;");document.write("&nbsp;&nbsp;");document.write("&nbsp;&nbsp;");
+			}
+			//打印左侧三角；
+			for(var k = 1;k<=s;k++){
+				document.write("*");document.write("*");document.write("*");
+			}
+			//打印右侧三角；
+			for(var k = 1;k<=s;k++){
+				document.write("*");document.write("*");document.write("*");
+			}
+			
+			document.write("<br />")
+			
+		}		
+		//第四个三角形，及左边空白部分；
+		for(;f<=h;f++){		
+			//打印空白倒三角；
+			for(var k=h;k>=f;k--){
+				document.write("&nbsp;&nbsp;");document.write("&nbsp;&nbsp;");document.write("&nbsp;&nbsp;");document.write("&nbsp;&nbsp;");
+			}
+			//打印左侧三角；
+			for(var k = 1;k<=f;k++){
+				document.write("*");document.write("*");document.write("*");document.write("*");
+			}
+			//打印右侧三角；
+			for(var k = 1;k<=f;k++){
+				document.write("*");document.write("*");document.write("*");document.write("*");
+			}
+			
+			document.write("<br />")
+			
+		}				
+		//躯干
+		for(;q<=h;q++){
+			for(var k =1;k<=4*h;k++){
+				document.write("&nbsp;&nbsp;");
+			}
+			for(var k=1;k<h;k++){
+				document.write("*");
+			}
+			document.write("<br />");
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+	
+	
+	
+</html>
