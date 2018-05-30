@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		li{list-style: none;}
+		ul{width:300px;height: 300px;box-shadow: 0px 0px 5px #000; margin:100px auto 0;
+			display: flex; flex-wrap: wrap; box-sizing: border-box;padding:0;}
+		#btn{height:30px; width:100px; font:700 12px/30px ""; text-align: center;color: #f00; 
+			border:0; margin-left: 535px; margin-top: 20px; }
+		li{width: 100px; height: 100px; border:1px solid #000; box-sizing: border-box; font:22px/100px "";
+			   text-align: center; position: relative;}
+		li input{ width:80px;height:50px;display:block; position: absolute; left: 0;right: 0;top: 0;bottom: 0; 
+			margin:auto; border: 0; border-radius: 50%; background: #fff;}	
+		</style>
+	</head>
+	<body>
+		<ul id="box">
+			<li id="li1"><input type="button" name="btn1" id="btn1" value="" /></li>
+			<li id="li2"><input type="button" name="btn1" id="btn2" value="" /></li>
+			<li id="li3"><input type="button" name="btn1" id="btn3" value="" /></li>
+			<li id="li4"><input type="button" name="btn1" id="btn4" value="" /></li>
+			<li id="li5"><input type="button" name="btn1" id="btn5" value="" /></li>
+			<li id="li6"><input type="button" name="btn1" id="btn6" value="" /></li>
+			<li id="li7"><input type="button" name="btn1" id="btn7" value="" /></li>
+			<li id="li8"><input type="button" name="btn1" id="btn8" value="" /></li>
+			<li id="li9"><input type="button" name="btn1" id="btn9" value="" /></li>
+		</ul>
+		<input type="button" name="btn" id="btn" value="游戏开始！" />
+	</body>
+	<script type="text/javascript">
+//		var arr = ["","","*=*","","","","","","","","","","","","","","",""];
+		var jsq = null;
+//		var obox = document.getElementById("box");
+		var obtn = document.getElementById("btn");
+		var obut2 = document.getElementById("btn1");
+		
+		obtn.onclick = function(){
+			var fenshu = 0;
+			var xh = 0;
+			clearInterval(jsq);
+			jsq = setInterval(function(){
+				obut2.value = "";
+				var s = ("btn" + Math.round(Math.random()*8+1));
+				 obut2 = document.getElementById(s);
+				obut2.value = "*=*";
+				xh++;
+				obut2.onclick = function(){
+				fenshu+=10;
+				}
+				if(xh > 10){
+					clearInterval(jsq);
+					obut2.value ="得分："+fenshu;
+				}
+			},250)
+				
+		}
+		
+		
+//		obtn.onclick = function(){
+//			clearInterval(jsq);
+////			var a = Math.round(Math.random()*7);
+////			var b = Math.round(Math.random()*7);
+////			var c = Math.round(Math.random()*7);
+//		 	jsq = setInterval(function(){
+////			console.log((Math.round(Math.random()*8)))
+//			obox.innerHTML = '<li>'+arr[Math.round(Math.random()*7)] +'</li>'+
+//							 '<li>'+arr[Math.round(Math.random()*7)] +'</li>'+
+//							 '<li>'+arr[Math.round(Math.random()*7)] +'</li>'+
+//							 '<li>'+arr[Math.round(Math.random()*7)] +'</li>'+
+//							 '<li>'+arr[Math.round(Math.random()*7)] +'</li>'+
+//							 '<li>'+arr[Math.round(Math.random()*7)] +'</li>'+
+//							 '<li>'+arr[Math.round(Math.random()*7)] +'</li>'+
+//							 '<li>'+arr[Math.round(Math.random()*7)] +'</li>'+
+//							 '<li>'+arr[Math.round(Math.random()*7)] +'</li>'
+//			
+//		},200)
+//	}
+		
+		
+		
+//		console.log(arr);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</html>
