@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{padding: 0; margin: 0;}
+			#box{width:182px; height: 300px;box-shadow: 0 0 5px #000;margin: 20px auto;
+					display: flex; justify-content: center;flex-wrap: wrap;align-items: center;
+					}
+			div{width:10px; height: 10px;border:1px solid #fff ;box-sizing: border-box;}
+			span{display: block;width:100px;margin:0 auto;}
+			input{ width: 30px; border: 0;margin:10px;border-radius: 5px;}
+			 input:nth-child(3){margin-left: 500px;}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<span id="sp">
+			得分：
+		</span>
+		<input type="button" name="btn1" id="btn1" value="简单" />
+		<input type="button" name="btn1" id="btn2" value="困难" />
+		<input type="button" name="btn1" id="btn3" value="疯狂" />
+	</body>
+	<script type="text/javascript">
+		var obox = document.getElementById("box");
+		var sp = document.getElementById("sp");
+		var btn1 = document.getElementById("btn1");
+		var btn2 = document.getElementById("btn2");
+		var btn3 = document.getElementById("btn3");
+		var s = 0;
+		var jsq1= null;
+		var jsq2= null;
+		var jsq3= null;
+		var jsq4= null;
+		var sw = 0;
+		var fs = -1;
+		var sd = 180;
+		//打印棋盘；
+		for(var i =0; i<540;i++){
+			var d = document.createElement("div");
+//			d.index = i;
+			d.setAttribute("index",i);
+			d.setAttribute("index2",i);
+//			console.log(d.getAttribute("index"));
+			obox.appendChild(d);
+		}
+//		xr(sd);
+		sws();
+		//选择模式；
+		btn1.onclick = function(){
+			sd = 180;
+		}
+		btn2.onclick = function(){
+			sd = 60;
+		}
+		btn3.onclick = function(){
+			sd = 10;
+		}
+		
+		//获取键盘事件
+		document.onkeydown = function(eve){
+				clearInterval(jsq1);
+				clearInterval(jsq2);
+				clearInterval(jsq3);
+				clearInterval(jsq4);
+				var e = eve || window.event;
+//				console.log(e.keyCode)
+				if(e.keyCode == 37){
+					xl();
+				}
+				if(e.keyCode == 38){
+					yt();
+				}
+				if(e.keyCode == 39){
+					xr();
+				}
+				if(e.keyCode == 40){
+					yb();
+				}
+			}
+		//随机出现食物；
+			function sws(){
+			sw = Math.round(Math.random()*500);
+			obox.children[sw].style.background = "green";
+			fs++;
+			}
+		
+		
+		
+		//出现小蛇，并移动；
+			//横向向右移动
+			function xr(){
+				 jsq1 = setInterval(function(){
+				for(var i = 0;i<540;i++){
+					if(i != sw){
+						obox.children[i].style.background = "white";
+					}
+					if(obox.children[sw].style.background == "red"){
+						obox.children[sw].style.background = "white";
+						sws();
+					}
+				}
+				
+				for(var i = 0;i<538;i++){
+				var ls = obox.children[i].getAttribute("index");
+				if(ls==s||ls==s+1|ls==s+2){
+					obox.children[i].style.background = "red";
+					obox.children[i+1].style.background = "red";
+					obox.children[i+2].style.background = "red";
+				}
+				}
+				s++;
+				if(s>=538){
+					s=0;
+				}
+				sp.innerHTML = "得分：" + fs;
+			},sd)
+			}
+			
+			//横向向左移动
+			function xl(){
+				 jsq2 = setInterval(function(){
+				for(var i = 0;i<540;i++){
+					if(i != sw){
+						obox.children[i].style.background = "white";
+					}
+					if(obox.children[sw].style.background == "red"){
+						obox.children[sw].style.background = "white";
+						sws();
+					}
+				}
+				
+				for(var i = 0;i<538;i++){
+				var ls = obox.children[i].getAttribute("index");
+				if(ls==s||ls==s+1|ls==s+2){
+					obox.children[i].style.background = "red";
+					obox.children[i+1].style.background = "red";
+					obox.children[i+2].style.background = "red";
+				}
+				}
+				s--;
+				if(s<=0){
+					s=538;
+				}
+				sp.innerHTML = "得分：" + fs;
+			},sd)
+			}
+//			xl();
+			//纵向向下移动
+			function yb(){
+				 jsq3 = setInterval(function(){
+				for(var i = 0;i<540;i++){
+					if(i != sw){
+						obox.children[i].style.background = "white";
+					}
+					if(obox.children[sw].style.background == "red"){
+						obox.children[sw].style.background = "white";
+						sws();
+					}
+				}
+				
+				for(var i = 0;i<502;i++){
+				var ls = obox.children[i].getAttribute("index");
+				if(ls==s||ls==s+18|ls==s+36){
+					obox.children[i].style.background = "red";
+					obox.children[i+18].style.background = "red";
+					obox.children[i+36].style.background = "red";
+				}
+				}
+				s=s+18;
+				if(s>=522){
+					s=s-522;
+				}
+				sp.innerHTML = "得分：" + fs;
+			},sd)
+			}
+			//纵向向下移动；
+			//纵向向上移动
+			function yt(){
+				 jsq4 = setInterval(function(){
+				for(var i = 0;i<540;i++){
+					if(i != sw){
+						obox.children[i].style.background = "white";
+					}
+					if(obox.children[sw].style.background == "red"){
+						obox.children[sw].style.background = "white";
+						sws();
+					}
+				}
+				
+				for(var i = 0;i<502;i++){
+				var ls = obox.children[i].getAttribute("index");
+				if(ls==s||ls==s+18|ls==s+36){
+					obox.children[i].style.background = "red";
+					obox.children[i+18].style.background = "red";
+					obox.children[i+36].style.background = "red";
+				}
+				}
+				s=s-18;
+				if(s<=0){
+					s=s+522;;
+				}
+				sp.innerHTML = "得分：" + fs;
+			},sd)
+			}
+//			yt()
+	</script>
+</html>
