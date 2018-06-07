@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{padding:0; margin: 0;}
+			#box{width:302px; height: 300px; margin:50px auto; 
+				box-shadow: 0 0 5px #000;display: flex;
+				 justify-content: center; flex-wrap: wrap;padding-right: 30px;}
+			div{width: 30px; height: 30px;border: #000000 solid 1px;box-sizing: border-box;}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var obox = document.getElementById("box");
+		
+		//开始进行随机设置n个雷区；
+		function bulei(n){
+			var arr = [];
+			for(var i =0; i<n;i++){
+				 arr[i] = Math.round(Math.random()*99);
+			}
+			return arr;
+		}
+			var leiArr = bulei(10);
+//			console.log(leiArr);
+		//打印棋盘；将雷标记
+		for(var i =0; i<100;i++){
+			var odiv = document.createElement("div");
+			obox.appendChild(odiv);
+			odiv.index = i;
+			for(var j = 0; j<leiArr.length;j++){
+				if(i == leiArr[j]){
+					odiv.index2 = "-1";
+				}
+			}
+		}
+		
+		//点击事件委托，点击变红；
+		obox.onmousedown = function(eve){
+			var e = eve || window.event;
+			if(e.button == 0){
+			if(e.target.index || e.target.index===0){
+			var bj = e.target.index2;
+			//进行点击判断；
+				if(bj == -1){
+					e.target.style.backgroundColor = "red";
+					alert("结束")
+				}else{
+					e.target.innerHTML = shumu(e.target);
+				}
+			}
+			}
+		}
+		//返回当前div四周的雷数；
+		function shumu(div){
+			var num = 0;
+			if(div.index2==-1){
+				return null;
+			}
+			var odiv = [];
+			 odiv[0] = div.parentNode.children[div.index-11];
+			 odiv[1] = div.parentNode.children[div.index-10];
+			 odiv[2] = div.parentNode.children[div.index-9];
+			 odiv[3] = div.parentNode.children[div.index-1];
+			 odiv[4] = div.parentNode.children[div.index+1];
+			 odiv[5] = div.parentNode.children[div.index+9];
+			 odiv[6] = div.parentNode.children[div.index+10];
+			 odiv[7] = div.parentNode.children[div.index+11];
+			for(var i = 0; i<odiv.length;i++){
+				if(odiv[i]&&odiv[i].index2){
+					num++;
+				}
+			}
+//			if(num>0){
+				return num;
+//			}
+//			else{
+//				shumu(div.parentNode.children[div.index+1])
+//			}
+		}
+		//把四周的隐藏,设为安全区；
+		for(var i =0; i<100;i++){
+			if((i+1)%10==0){
+				obox.children[i].style.display = "none";
+				obox.children[i].index2 = "";
+			}
+		}
+		//取消浏览器的右键；
+		document.oncontextmenu = function(eve){
+
+			var e = eve || window.event;
+			e.preventDefault();
+			if(e.target.index || e.target.index===0){
+				var bj = e.target.index2;
+			//进行点击判断；
+					e.target.style.backgroundColor = "red";
+				
+			}
+		}
+	</script>
+</html>
